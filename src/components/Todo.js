@@ -1,6 +1,6 @@
 
-export default function Todo({item}) {
+export default function Todo({dispatch, item}) {
     return (
-        <p>{item.item}</p>
+        <p id={item.id} onClick={(e) => dispatch({type: 'TOGGLE_TODO', payload: e.target.id})}>{item.item}</p>
     )
 }

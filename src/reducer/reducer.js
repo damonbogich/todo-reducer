@@ -8,6 +8,17 @@ export const initialState = {
 
 export const reducer = (state, action) => {
     switch(action.type) {
+        case "TOGGLE_TODO": {
+            let updatedTodos = state.todos.map((item) => {
+                if(item.id === parseInt(action.payload)) {
+                    console.log('if entered for:', item)
+                    return {...item, completed: !item.completed}
+                }
+                console.log(item)
+                return item 
+            })
+            return {...state, todos: updatedTodos};
+        }
         default: 
             return state
     }
