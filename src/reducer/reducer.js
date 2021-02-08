@@ -18,14 +18,12 @@ export const reducer = (state, action) => {
             return {...state, todos: updatedTodos};
         }
         case "CLEAR_COMPLETED": {
-            console.log('clear clicked');
             action.payload.preventDefault();
             let updatedTodos = state.todos.filter((item) => {
                 if (item.completed === false) {
                     return item
                 }
             })
-            console.log(updatedTodos)
             return {...state, todos: updatedTodos};
         }
         default: 
