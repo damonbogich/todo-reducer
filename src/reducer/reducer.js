@@ -11,12 +11,21 @@ export const reducer = (state, action) => {
         case "TOGGLE_TODO": {
             let updatedTodos = state.todos.map((item) => {
                 if(item.id === parseInt(action.payload)) {
-                    console.log('if entered for:', item)
                     return {...item, completed: !item.completed}
                 }
-                console.log(item)
                 return item 
             })
+            return {...state, todos: updatedTodos};
+        }
+        case "CLEAR_COMPLETED": {
+            console.log('clear clicked');
+            action.payload.preventDefault();
+            let updatedTodos = state.todos.filter((item) => {
+                if (item.completed === false) {
+                    return item
+                }
+            })
+            console.log(updatedTodos)
             return {...state, todos: updatedTodos};
         }
         default: 
