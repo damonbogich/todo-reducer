@@ -8,6 +8,7 @@ export default function Form({dispatch}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch({type: 'ADD_TODO', payload: newItem})
+        setNewItem("");
     };
     
     return (

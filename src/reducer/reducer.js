@@ -27,16 +27,10 @@ export const reducer = (state, action) => {
             return {...state, todos: updatedTodos};
         }
         case "ADD_TODO": {
-            console.log('add entered');
             let item = action.payload;
-            console.log(item);
             let newTodo = {item: item, completed: false, id: Date.now()};
-            console.log(newTodo);
             let newTodoList = [...state.todos, newTodo];
-            console.log(newTodoList, 'new list')
-            
             return {...state, todos: newTodoList}
-
         }
         default: 
             return state

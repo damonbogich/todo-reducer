@@ -1,7 +1,6 @@
 import Todo from './Todo';
 export default function List({state, dispatch}) {
     let todos = state.todos;
-    console.log(todos, 'list')
     return (
         <div>
             {todos.map(item => {
